@@ -1,0 +1,70 @@
+.g-logo {
+  --size: 300px;
+
+  height: var(--size);
+  width: var(--size);
+  position: relative;
+  // outline: 2px dotted blue;
+  animation: spin 8s ease-in forwards 3s;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    60% {
+      opacity: 1;
+    }
+
+    to {
+      transform: rotate(3600deg);
+      opacity: 0;
+    }
+  }
+}
+
+.arch {
+  background: black;
+  width: calc(var(--size) * 0.5);
+  height: calc(var(--size) * 0.28);
+  border-radius: 100% 100% 0% 20% / 200% 200% 0% 20%;
+  position: absolute;
+  margin-top: calc(var(--size) * -0.14);
+
+  &--yellow {
+    background-color: #fcbc05;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &--red {
+    background-color: #e94335;
+    top: 25%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, -50%);
+    transform-origin: left;
+  }
+
+  &--green {
+    background-color: #34a853;
+    transform: rotate(-90deg) translate(-50%, -50%);
+    left: 25%;
+    top: 50%;
+  }
+
+  &--blue {
+    background-color: #4385f5;
+    transform: rotate(180deg) translate(-50%, -50%);
+    top: 50%;
+    left: 25%;
+  }
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background-color: #212121;
+}
